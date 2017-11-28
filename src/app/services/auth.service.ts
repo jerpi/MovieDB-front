@@ -25,7 +25,7 @@ export class AuthService {
     );
   }
 
-  isUser(): Observable<boolean> {
+  isAuth(): Observable<boolean> {
     return this.http.get<boolean>(
       '/auth/login'
     ).pipe(
