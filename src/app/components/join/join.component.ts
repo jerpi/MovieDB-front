@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import {AuthService} from "../../services/auth.service";
+import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-join',
+  templateUrl: './join.component.html',
+  styleUrls: ['./join.component.css']
 })
-export class LoginComponent {
+export class JoinComponent {
 
   username: string;
   password: string;
@@ -18,9 +18,9 @@ export class LoginComponent {
     private authService: AuthService,
   ) { }
 
-  login() {
+  register() {
     this.loading = true;
-    this.authService.login(this.username, this.password)
+    this.authService.register(this.username, this.password)
       .subscribe((res) => {
         this.loading = false;
         if (res) {
