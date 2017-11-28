@@ -23,12 +23,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       username: ['', {
-        updateOn: 'blur',
         validators: [Validators.required, Validators.minLength(8), Validators.maxLength(30)],
       }],
       password: ['', {
-        updateOn: 'blur',
-        validators:[Validators.required, Validators.minLength(8), Validators.maxLength(30)],
+        validators: [Validators.required, Validators.minLength(8), Validators.maxLength(30)],
       }],
     });
   }
