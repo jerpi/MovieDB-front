@@ -1,19 +1,7 @@
 <div>
   <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
     <input formControlName="username" placeholder="Name">
-    <p *ngIf="hasError('username', 'required')">
-      Please provide a username
-    </p>
-    <p *ngIf="!hasError('username', 'required') && hasError('username', ['minlength','maxlength'])">
-      Username must be between 8 and 30 characters long
-    </p>
     <input formControlName="password" placeholder="Password" type="password">
-    <p *ngIf="hasError('password', 'required')">
-      Please provide a password
-    </p>
-    <p *ngIf="!hasError('password', 'required') && hasError('password', ['minlength','maxlength'])">
-      Password must be between 8 and 30 characters long
-    </p>
     <button>Sign in</button>
   </form>
   <button [routerLink]="['/join']">Sign up</button>
