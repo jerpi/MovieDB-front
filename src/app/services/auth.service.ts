@@ -33,6 +33,14 @@ export class AuthService {
     );
   }
 
+  logout(): Observable<boolean> {
+    return this.http.get<boolean>(
+      '/auth/logout',
+    ).pipe(
+      catchError(this.handleError('isAdmin', false))
+    );
+  }
+
   register(username: string, password: string): Observable<boolean> {
     const body = {
       username,
@@ -48,7 +56,7 @@ export class AuthService {
 
   isAdmin(): Observable<boolean> {
     return this.http.get<boolean>(
-      'auth/admin'
+      '/auth/admin'
     ).pipe(
       catchError(this.handleError('isAdmin', false))
     );
