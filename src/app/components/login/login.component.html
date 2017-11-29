@@ -1,10 +1,16 @@
 <div>
   <form class="form-group" [formGroup]="form" (ngSubmit)="onSubmit(form)">
-    <label class="form-label" for="username-input">Username</label>
-    <input class="form-input" id="username-input" formControlName="username" placeholder="Username">
-    <label class="form-label" for="password-input">Password</label>
-    <input class="form-input" id="password-input" formControlName="password" placeholder="Password" type="password">
-    <button class="btn btn-primary" [disabled]="form.invalid">Sign in</button>
+    <div>
+      <label class="form-label" for="username-input">Username</label>
+      <input class="form-input" id="username-input" formControlName="username" placeholder="Username">
+    </div>
+    <div>
+      <label class="form-label" for="password-input">Password</label>
+      <input class="form-input" id="password-input" formControlName="password" placeholder="Password" type="password">
+    </div>
+    <button class="btn btn-primary" [ngClass]="{'loading': loading}" [disabled]="form.invalid">
+      Sign in
+    </button>
   </form>
   <button class="btn btn-link" [routerLink]="['/join']">Sign up</button>
 </div>

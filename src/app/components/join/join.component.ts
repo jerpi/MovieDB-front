@@ -50,7 +50,10 @@ export class JoinComponent implements OnInit {
       });
   }
 
-  hasError(key: string, error: string | string[]): boolean {
+  hasError(key: string, error?: string | string[]): boolean {
+    if (!error) {
+      return this.form.get(key).valid;
+    }
     if (isArray(error)) {
       for (let err of error) {
         if (this.form.get(key).hasError(err)) {
@@ -60,6 +63,14 @@ export class JoinComponent implements OnInit {
       return false;
     }
     return this.form.get(key).hasError(<string>error);
+  }
+
+  get hasUsername() {
+    return this.hasError('username');
+  }
+
+  get hasPassword() {
+    return this.hasError('password');
   }
 
 }

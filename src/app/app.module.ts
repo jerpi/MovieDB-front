@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import {AuthService} from "./services/auth.service";
 import { JoinComponent } from './components/join/join.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     AppComponent,
     LandingComponent,
     LoginComponent,
-    JoinComponent
+    JoinComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

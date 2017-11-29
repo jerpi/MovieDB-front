@@ -1,22 +1,26 @@
 <div>
   <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
-    <label class="form-label" for="username-input">Username</label>
-    <input class="form-input" id="username-input" formControlName="username" placeholder="Username">
-    <p *ngIf="hasError('username', 'required')">
-      Please provide a username
-    </p>
-    <p *ngIf="!hasError('username', 'required') && hasError('username', ['minlength','maxlength'])">
-      Username must be between 8 and 30 characters long
-    </p>
-    <label class="form-label" for="password-input">Password</label>
-    <input class="form-input" id="password-input" formControlName="password" placeholder="Password" type="password">
-    <p *ngIf="hasError('password', 'required')">
-      Please provide a password
-    </p>
-    <p *ngIf="!hasError('password', 'required') && hasError('password', ['minlength','maxlength'])">
-      Password must be between 8 and 30 characters long
-    </p>
-    <button class="btn btn-primary" [disabled]="form.invalid">Sign up</button>
+    <div [ngClass]="{'has-success': hasUsername, 'has-error': !hasUsername}">
+      <label class="form-label" for="username-input">Username</label>
+      <input class="form-input" id="username-input" formControlName="username" placeholder="Username">
+      <p class="form-input-hint" *ngIf="hasError('username', 'required')">
+        Please provide a username
+      </p>
+      <p class="form-input-hint" *ngIf="!hasError('username', 'required') && hasError('username', ['minlength','maxlength'])">
+        Username must be between 8 and 30 characters long
+      </p>
+    </div>
+    <div [ngClass]="{'has-success': hasPassword, 'has-error': !hasPassword}">
+      <label class="form-label" for="password-input">Password</label>
+      <input class="form-input" id="password-input" formControlName="password" placeholder="Password" type="password">
+      <p class="form-input-hint" *ngIf="hasError('password', 'required')">
+        Please provide a password
+      </p>
+      <p class="form-input-hint" *ngIf="!hasError('password', 'required') && hasError('password', ['minlength','maxlength'])">
+        Password must be between 8 and 30 characters long
+      </p>
+    </div>
+    <button class="btn btn-primary" [ngClass]="{'loading': loading}" [disabled]="form.invalid">Sign up</button>
   </form>
   <button class="btn btn-link" [routerLink]="['/login']">Sign in</button>
 </div>
