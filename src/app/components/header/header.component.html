@@ -1,1 +1,17 @@
-<header class="he"></header>
+<header class="navbar">
+  <section class="navbar-section">
+    <a class="btn btn-link" [routerLink]="['/movies']">Movies</a>
+    <a class="btn btn-link" [routerLink]="['/cast']">Cast</a>
+    <div class="input-group input-inline">
+      <input class="form-input" placeholder="search">
+      <button class="btn btn-primary input-group-btn">Search</button>
+    </div>
+  </section>
+  <section class="navbar-center">
+    MoviesDB
+  </section>
+  <section class="navbar-section">
+    <button class="btn" [routerLink]="['/login']">Sign in</button>
+    <button class="btn btn-primary" [routerLink]="['/join']">Sign up</button>
+  </section>
+</header>
