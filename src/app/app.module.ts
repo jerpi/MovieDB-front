@@ -9,6 +9,10 @@ import {AuthService} from "./services/auth.service";
 import { JoinComponent } from './components/join/join.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { HeaderComponent } from './components/header/header.component';
+import { MovieShowcaseComponent } from './components/landing/movie-showcase/movie-showcase.component';
+import { CastShowcaseComponent } from './components/landing/cast-showcase/cast-showcase.component';
+import { CastDetailsComponent } from './components/cast-details/cast-details.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 
 @NgModule({
@@ -17,7 +21,11 @@ import { HeaderComponent } from './components/header/header.component';
     LandingComponent,
     LoginComponent,
     JoinComponent,
-    HeaderComponent
+    HeaderComponent,
+    MovieShowcaseComponent,
+    CastShowcaseComponent,
+    CastDetailsComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
