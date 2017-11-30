@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -10,13 +11,15 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
+    console.log(this.router.url);
   }
 
   get showSignInButtons() {
-    return this.authService
+    return this.router.url != '/join' && this.router.url != '/login';
   }
 
 }

@@ -9,8 +9,6 @@ import {handleError} from "./utils/handleError";
 @Injectable()
 export class AuthService {
 
-  auth: boolean = false;
-
   constructor(
     private http: HttpClient
   ) { }
@@ -53,7 +51,8 @@ export class AuthService {
       '/auth/register',
       body,
     ).pipe(
-      catchError(handleError<boolean>('login', false))
+      catchError(handleError<boolean>('login', false)),
+
     );
   }
 
@@ -61,7 +60,8 @@ export class AuthService {
     return this.http.get<boolean>(
       '/auth/admin'
     ).pipe(
-      catchError(handleError<boolean>('isAdmin', false))
+      catchError(handleError<boolean>('isAdmin', false)),
     );
   }
+
 }
