@@ -4,9 +4,12 @@ import {Observable} from "rxjs/Observable";
 
 import {catchError} from "rxjs/operators";
 import {of} from "rxjs/observable/of";
+import {handleError} from "./utils/handleError";
 
 @Injectable()
 export class AuthService {
+
+  auth: boolean = false;
 
   constructor(
     private http: HttpClient
@@ -21,7 +24,7 @@ export class AuthService {
       '/auth/login',
       body,
     ).pipe(
-      catchError(this.handleError('login', false))
+      catchError(handleError<boolean>('login', false)),
     );
   }
 
@@ -29,7 +32,7 @@ export class AuthService {
     return this.http.get<boolean>(
       '/auth/login'
     ).pipe(
-      catchError(this.handleError('isUser', false))
+      catchError(handleError<boolean>('isUser', false))
     );
   }
 
@@ -37,7 +40,7 @@ export class AuthService {
     return this.http.get<boolean>(
       '/auth/logout',
     ).pipe(
-      catchError(this.handleError('isAdmin', false))
+      catchError(handleError<boolean>('isAdmin', false))
     );
   }
 
@@ -50,7 +53,7 @@ export class AuthService {
       '/auth/register',
       body,
     ).pipe(
-      catchError(this.handleError('login', false))
+      catchError(handleError<boolean>('login', false))
     );
   }
 
@@ -58,15 +61,7 @@ export class AuthService {
     return this.http.get<boolean>(
       '/auth/admin'
     ).pipe(
-      catchError(this.handleError('isAdmin', false))
+      catchError(handleError<boolean>('isAdmin', false))
     );
   }
-
-  private handleError<T> (operation = 'operation', result?: T): (error: any) => Observable<T> {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      return of(<T> result);
-    }
-  }
-
 }
