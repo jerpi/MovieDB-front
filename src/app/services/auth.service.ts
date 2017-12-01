@@ -9,6 +9,8 @@ import {handleError} from "./utils/handleError";
 @Injectable()
 export class AuthService {
 
+  public isLoggedIn: boolean = false;
+
   constructor(
     private http: HttpClient
   ) { }
@@ -18,42 +20,57 @@ export class AuthService {
       username,
       password,
     };
-    return this.http.post<boolean>(
+    const obs = this.http.post<boolean>(
       '/auth/login',
       body,
     ).pipe(
       catchError(handleError<boolean>('login', false)),
     );
+    obs.subscribe(
+      isLoggedIn => this.isLoggedIn = isLoggedIn
+    );
+    return obs;
   }
 
   isAuth(): Observable<boolean> {
-    return this.http.get<boolean>(
+    const obs = this.http.get<boolean>(
       '/auth/login'
     ).pipe(
       catchError(handleError<boolean>('isUser', false))
     );
+    obs.subscribe(
+      isLoggedIn => this.isLoggedIn = isLoggedIn
+    );
+    return obs;
   }
 
   logout(): Observable<boolean> {
-    return this.http.get<boolean>(
+    const obs = this.http.get<boolean>(
       '/auth/logout',
     ).pipe(
       catchError(handleError<boolean>('logout', false))
     );
+    obs.subscribe(
+      isLoggedOut => this.isLoggedIn = !isLoggedOut
+    );
+    return obs;
   }
 
   register(username: string, password: string): Observable<boolean> {
-    const body = {
-      username,
-      password,
-    };
-    return this.http.post<boolean>(
+    const obs = this.http.post<boolean>(
       '/auth/register',
-      body,
+      {
+        username,
+        password
+      },
     ).pipe(
       catchError(handleError<boolean>('register', false)),
 
     );
+    obs.subscribe(
+      isRegistered => this.isLoggedIn = isRegistered
+    );
+    return obs;
   }
 
   isAdmin(): Observable<boolean> {

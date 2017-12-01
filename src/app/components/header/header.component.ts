@@ -15,11 +15,11 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.router.url);
+
   }
 
   get showSignInButtons() {
-    return this.router.url != '/join' && this.router.url != '/login';
+    return this.router.url != '/join' && this.router.url != '/login' && !this.authService.isLoggedIn;
   }
 
 }
