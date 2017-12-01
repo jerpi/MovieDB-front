@@ -38,7 +38,7 @@ export class AuthService {
     return this.http.get<boolean>(
       '/auth/logout',
     ).pipe(
-      catchError(handleError<boolean>('isAdmin', false))
+      catchError(handleError<boolean>('logout', false))
     );
   }
 
@@ -51,7 +51,7 @@ export class AuthService {
       '/auth/register',
       body,
     ).pipe(
-      catchError(handleError<boolean>('login', false)),
+      catchError(handleError<boolean>('register', false)),
 
     );
   }

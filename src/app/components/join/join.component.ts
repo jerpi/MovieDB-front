@@ -34,8 +34,6 @@ export class JoinComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       this.register(this.form.value.username, this.form.value.password);
-    } else {
-      // TODO show message
     }
   }
 

@@ -34,8 +34,6 @@ export class LoginComponent implements OnInit {
   onSubmit(form: FormGroup) {
     if (form.valid) {
       this.login(form.value.username, form.value.password);
-    } else {
-      // TODO show message
     }
   }
 
@@ -49,18 +47,5 @@ export class LoginComponent implements OnInit {
         }
       });
   }
-
-  hasError(key: string, error: string | string[]): boolean {
-    if (isArray(error)) {
-      for (let err of error) {
-        if (this.form.get(key).hasError(err)) {
-          return true;
-        }
-      }
-      return false;
-    }
-    return this.form.get(key).hasError(<string>error);
-  }
-
 
 }
