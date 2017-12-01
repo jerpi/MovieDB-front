@@ -52,7 +52,7 @@ export class JoinComponent implements OnInit {
 
   hasError(key: string, error?: string | string[]): boolean {
     if (!error) {
-      return this.form.get(key).valid;
+      return !this.form.get(key).valid;
     }
     if (isArray(error)) {
       for (let err of error) {
@@ -65,12 +65,30 @@ export class JoinComponent implements OnInit {
     return this.form.get(key).hasError(<string>error);
   }
 
-  get hasUsername() {
-    return this.hasError('username');
+  get hasUsername(): boolean {
+    return !this.hasError('username');
   }
 
-  get hasPassword() {
-    return this.hasError('password');
+  get showUsernameRequired(): boolean {
+    return this.hasError('username', 'required');
+  }
+
+  get showUsernameLength(): boolean {
+    return !this.hasError('username', 'required')
+      && this.hasError('username', ['minlength', 'maxlength']);
+  }
+
+  get hasPassword(): boolean {
+    return !this.hasError('password');
+  }
+
+  get showPasswordRequired(): boolean {
+    return this.hasError('password', 'required');
+  }
+
+  get showPasswordLength(): boolean {
+    return !this.hasError('password', 'required')
+      && this.hasError('password', ['minlength', 'maxlength']);
   }
 
 }
