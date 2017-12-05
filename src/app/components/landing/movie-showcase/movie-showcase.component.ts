@@ -10,8 +10,10 @@ import {Movie} from '../../../models/movie';
 })
 export class MovieShowcaseComponent implements OnInit {
 
-  movies: Array<Movie>;
-  constructor(private movieService: MovieService) { }
+  movies: Movie[];
+  constructor(
+    private movieService: MovieService
+  ) { }
 
   ngOnInit() {
     this.getMovies();

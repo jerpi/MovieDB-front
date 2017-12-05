@@ -26,7 +26,7 @@ export class JoinComponent implements OnInit {
         validators: [Validators.required, Validators.minLength(8), Validators.maxLength(30)],
       }],
       password: ['', {
-        validators:[Validators.required, Validators.minLength(8), Validators.maxLength(30)],
+        validators: [Validators.required, Validators.minLength(8), Validators.maxLength(30)],
       }],
     });
   }

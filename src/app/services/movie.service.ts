@@ -11,11 +11,11 @@ import { Movie } from '../models/movie';
 export class MovieService {
 
   movieUrl = 'movies/movies.json';
+
   constructor(
     private http: HttpClient
   ) { }
 
-  /** GET movies from the server */
   getMovies (): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.movieUrl);
   }
