@@ -15,6 +15,7 @@ import { CastDetailsComponent } from './components/cast-details/cast-details.com
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { MovieCardComponent } from './components/landing/movie-showcase/movie-card/movie-card.component';
 import { MovieService} from './services/movie.service';
+import { HeaderMenuComponent } from './components/header/header-menu/header-menu.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MovieService} from './services/movie.service';
     CastShowcaseComponent,
     CastDetailsComponent,
     MovieDetailsComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    HeaderMenuComponent
   ],
   imports: [
     BrowserModule,
