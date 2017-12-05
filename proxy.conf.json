@@ -1,13 +1,5 @@
 {
-  "/api": {
-    "target": "http://localhost:3000",
-    "secure": false
-  },
-  "/template_2": {
-    "target": "http://localhost:3000",
-    "secure": false
-  },
-  "/ws":{
+  "/auth": {
     "target": "http://localhost:3000",
     "secure": false
   }
