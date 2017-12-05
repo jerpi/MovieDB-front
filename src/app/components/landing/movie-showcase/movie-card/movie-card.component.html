@@ -1,15 +1,21 @@
 <div class="card">
   <div class="card-image">
-    <img [src]="movie.coverUrl" class="img-responsive">
+    <a [routerLink]="['/movie', movie.id]">
+      <img [src]="movie.coverUrl" class="img-responsive">
+    </a>
   </div>
   <div class="card-header">
-    <div class="card-title h5">{{movie.name}}</div>
+    <div class="card-title h5">
+      <a [routerLink]="['/movie', movie.id]">
+        {{movie.name}}
+      </a>
+    </div>
     <div class="card-subtitle text-gray">{{movie.releaseDate}} ({{movie.runtime}})</div>
   </div>
   <div class="card-body">
     {{movie.description}}
   </div>
   <div class="card-footer">
-    <button class="btn btn-primary">Show details</button>
+    <a class="btn btn-primary" [routerLink]="['/movie', movie.id]">Show details</a>
   </div>
 </div>
