@@ -6,10 +6,10 @@ import {LoginComponent} from "./components/login/login.component";
 import {JoinComponent} from "./components/join/join.component";
 
 const routes: Routes = [
-  { path: '', component: LandingComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'join', component: JoinComponent},
-  { path: '**', redirectTo: ''}
+  { path: '', component: LandingComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'join', component: JoinComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -1,26 +1,37 @@
-<div>
-  <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
-    <div [ngClass]="{'has-success': hasUsername, 'has-error': !hasUsername}">
-      <label class="form-label" for="username-input">Username</label>
-      <input class="form-input" id="username-input" formControlName="username" placeholder="Username">
-      <p class="form-input-hint" *ngIf="showUsernameRequired">
-        Please provide a username
-      </p>
-      <p class="form-input-hint" *ngIf="showUsernameLength">
-        Username must be between 8 and 30 characters long
-      </p>
+<div class="col-6 col-xs-10 centered">
+  <h1>Join us!</h1>
+  <form class="form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <div class="form-group" [ngClass]="{'has-success': hasUsername, 'has-error': !hasUsername}">
+      <div class="col-3">
+        <label class="form-label" for="username-input">Username</label>
+      </div>
+      <div class="col-9">
+        <input class="form-input" id="username-input" formControlName="username" placeholder="Username">
+        <p class="form-input-hint" *ngIf="showUsernameRequired">
+          Please provide a username
+        </p>
+        <p class="form-input-hint" *ngIf="showUsernameLength">
+          Username must be between 8 and 30 characters long
+        </p>
+      </div>
     </div>
-    <div [ngClass]="{'has-success': hasPassword, 'has-error': !hasPassword}">
-      <label class="form-label" for="password-input">Password</label>
-      <input class="form-input" id="password-input" formControlName="password" placeholder="Password" type="password">
-      <p class="form-input-hint" *ngIf="showPasswordRequired">
-        Please provide a password
-      </p>
-      <p class="form-input-hint" *ngIf="showPasswordLength">
-        Password must be between 8 and 30 characters long
-      </p>
+    <div class="form-group" [ngClass]="{'has-success': hasPassword, 'has-error': !hasPassword}">
+      <div class="col-3">
+        <label class="form-label" for="password-input">Password</label>
+      </div>
+      <div class="col-9">
+        <input class="form-input" id="password-input" formControlName="password" placeholder="Password" type="password">
+        <p class="form-input-hint" *ngIf="showPasswordRequired">
+          Please provide a password
+        </p>
+        <p class="form-input-hint" *ngIf="showPasswordLength">
+          Password must be between 8 and 30 characters long
+        </p>
+      </div>
     </div>
-    <button class="btn btn-primary" [ngClass]="{'loading': loading}" [disabled]="form.invalid">Sign up</button>
+    <div>
+      <button class="btn btn-primary" [ngClass]="{'loading': loading}" [disabled]="form.invalid">Sign up</button>
+      <a class="btn btn-link" [routerLink]="['/login']">Sign in</a>
+    </div>
   </form>
-  <button class="btn btn-link" [routerLink]="['/login']">Sign in</button>
 </div>
