@@ -22,4 +22,7 @@ export class HeaderComponent implements OnInit {
     return this.router.url != '/join' && this.router.url != '/login' && !this.authService.isLoggedIn;
   }
 
+  get showMenuButton() {
+    return this.router.url != '/join' && this.router.url != '/login' && this.authService.isLoggedIn; 
+  }
 }

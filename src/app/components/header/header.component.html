@@ -15,5 +15,6 @@
       <a [routerLink]="['/login']"><button class="btn">Sign in</button></a>
       <a [routerLink]="['/join']"><button class="btn btn-primary">Sign up</button></a>
     </ng-container>
+    <app-header-menu *ngIf="showMenuButton"></app-header-menu>
   </section>
 </header>

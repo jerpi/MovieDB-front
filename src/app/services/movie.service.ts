@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import { catchError, map, tap } from 'rxjs/operators';
-
-import { Movie } from '../models/Movie';
+import {Movie} from "../models/movie";
 
 @Injectable()
 export class MovieService {
@@ -15,8 +11,7 @@ export class MovieService {
     private http: HttpClient
   ) { }
 
-  /** GET movies from the server */
-  getMovies (): Observable<Movie[]> {
+  getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.movieUrl);
   }
 }

@@ -13,7 +13,8 @@ export class AuthGuard implements CanActivate {
 
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> {
+    state: RouterStateSnapshot): Observable<boolean>
+  {
     const obs = this.authService.isAuth();
     obs.subscribe(
       isLoggedIn => {
