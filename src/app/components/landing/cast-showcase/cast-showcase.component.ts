@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Cast} from '../../../models/Cast';
+import {CastService} from '../../../services/cast.service';
 
 @Component({
   selector: 'app-cast-showcase',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CastShowcaseComponent implements OnInit {
 
-  constructor() { }
+  cast: Array<Cast>;
+  constructor(private castService: CastService) { }
 
   ngOnInit() {
+    this.getCast();
+  }
+
+  getCast(): void {
+    this.castService.getCast()
+      .subscribe(cast => this.cast = cast);
   }
 
 }

@@ -6,13 +6,12 @@ import {Movie} from "../models/movie";
 @Injectable()
 export class MovieService {
 
-  movieUrl = 'movies/movies.json';
-
+  movieUrl = 'examples/movies.json';
   constructor(
     private http: HttpClient
   ) { }
 
-  getMovies (): Observable<Movie[]> {
+  getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.movieUrl);
   }
 }

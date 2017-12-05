@@ -5,8 +5,9 @@
       <div class="col-3">
         <label class="form-label" for="username-input">Username</label>
       </div>
-      <div class="col-9">
+      <div class="col-9 has-icon-right">
         <input class="form-input" id="username-input" formControlName="username" placeholder="Username">
+        <i class="form-icon icon icon-check" *ngIf="hasUsername"></i>
         <p class="form-input-hint" *ngIf="showUsernameRequired">
           Please provide a username
         </p>
@@ -19,8 +20,9 @@
       <div class="col-3">
         <label class="form-label" for="password-input">Password</label>
       </div>
-      <div class="col-9">
+      <div class="col-9 has-icon-right">
         <input class="form-input" id="password-input" formControlName="password" placeholder="Password" type="password">
+        <i class="form-icon icon icon-check" *ngIf="hasPassword"></i>
         <p class="form-input-hint" *ngIf="showPasswordRequired">
           Please provide a password
         </p>

@@ -11,10 +11,12 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { MovieShowcaseComponent } from './components/landing/movie-showcase/movie-showcase.component';
 import { CastShowcaseComponent } from './components/landing/cast-showcase/cast-showcase.component';
-import { CastDetailsComponent } from './components/cast-details/cast-details.component';
-import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { MovieCardComponent } from './components/landing/movie-showcase/movie-card/movie-card.component';
 import { MovieService} from './services/movie.service';
+import { CastCardComponent } from './components/landing/cast-showcase/cast-card/cast-card.component';
+import {CastService} from './services/cast.service';
+import { HeaderMenuComponent } from './components/header/header-menu/header-menu.component';
+import { MovieComponent } from './components/movie/movie.component';
 
 
 @NgModule({
@@ -26,9 +28,10 @@ import { MovieService} from './services/movie.service';
     HeaderComponent,
     MovieShowcaseComponent,
     CastShowcaseComponent,
-    CastDetailsComponent,
-    MovieDetailsComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    HeaderMenuComponent,
+    MovieComponent,
+    CastCardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { MovieService} from './services/movie.service';
   ],
   providers: [
     AuthService,
-    MovieService
+    MovieService,
+    CastService
   ],
   bootstrap: [AppComponent]
 })
