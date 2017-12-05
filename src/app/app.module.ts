@@ -15,6 +15,8 @@ import { CastDetailsComponent } from './components/cast-details/cast-details.com
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { MovieCardComponent } from './components/landing/movie-showcase/movie-card/movie-card.component';
 import { MovieService} from './services/movie.service';
+import { CastCardComponent } from './components/landing/cast-showcase/cast-card/cast-card.component';
+import {CastService} from './services/cast.service';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { MovieService} from './services/movie.service';
     CastShowcaseComponent,
     CastDetailsComponent,
     MovieDetailsComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    CastCardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { MovieService} from './services/movie.service';
   ],
   providers: [
     AuthService,
-    MovieService
+    MovieService,
+    CastService
   ],
   bootstrap: [AppComponent]
 })

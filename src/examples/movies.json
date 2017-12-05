@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Imitation Game",
+    "overview": "1940 : Alan Turing, mathématicien, cryptologue, est chargé par le gouvernement Britannique de percer le secret de la célèbre machine de cryptage allemande Enigma, réputée inviolable.",
+    "poster_path": "assets/covers/1.jpg",
+    "release_date": "28 janvier 2015",
+    "runtime": "1 h 55"
+  },
+  {
+    "id": 2,
+    "title": "Baby Driver",
+    "overview": "Chauffeur pour des braqueurs de banque, Baby a un truc pour être le meilleur dans sa partie : il roule au rythme de sa propre playlist. Lorsqu’il rencontre la fille de ses rêves, Baby cherche à mettre fin à ses activités criminelles pour revenir dans le droit chemin. Mais il est forcé de travailler pour un grand patron du crime et le braquage tourne mal… Désormais, sa liberté, son avenir avec la fille qu’il aime et sa vie sont en jeu.",
+    "poster_path": "assets/covers/2.jpg",
+    "release_date": "19 juillet 2017",
+    "runtime": "1 h 53"
+  }
+]

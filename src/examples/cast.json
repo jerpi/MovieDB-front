@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "img": "https://image.tmdb.org/t/p/w640/bBqRJl8IQXxKuYTNhoYRER9JO34.jpg",
+    "name": "Albert DUPONTEL",
+    "biography": "Albert Dupontel, nom de scène de Philippe Guillaume1, né le 11 janvier 1964 à Saint-Germain-en-Laye (Yvelines), est un acteur, réalisateur, scénariste et humoriste français.",
+    "birthdate": "11 janvier 1964"
+  },
+  {
+    "id": 2,
+    "img": "https://image.tmdb.org/t/p/w640/6tocswK39SrSjZIRDaTpVyPxDz8.jpg",
+    "name": "Angelina Jolie",
+    "biography": "Angelina Jolie, née Angelina Jolie Voight le 4 juin 1975 à Los Angeles, est une actrice, réalisatrice, scénariste, productrice, mannequin, philanthrope, écrivain et ambassadrice de bonne volonté américano-cambodgienne. Elle a reçu trois Golden Globes, deux Screen Actors Guild Awards et un Oscar du cinéma.",
+    "birthdate": "4 juin 1975"
+  }
+]

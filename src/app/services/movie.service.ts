@@ -5,12 +5,12 @@ import {Observable} from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Movie } from '../models/movie';
+import { Movie } from '../models/Movie';
 
 @Injectable()
 export class MovieService {
 
-  movieUrl = 'movies/movies.json';
+  movieUrl = 'examples/movies.json';
   constructor(
     private http: HttpClient
   ) { }
