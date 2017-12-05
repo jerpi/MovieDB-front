@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 
 import {catchError} from "rxjs/operators";
-import {of} from "rxjs/observable/of";
 import {handleError} from "./utils/handleError";
 
 @Injectable()
@@ -21,7 +20,7 @@ export class AuthService {
       password,
     };
     const obs = this.http.post<boolean>(
-      '/auth/login',
+      '/api/auth/login',
       body,
     ).pipe(
       catchError(handleError<boolean>('login', false)),
@@ -34,7 +33,7 @@ export class AuthService {
 
   isAuth(): Observable<boolean> {
     const obs = this.http.get<boolean>(
-      '/auth/login'
+      '/api/auth/login'
     ).pipe(
       catchError(handleError<boolean>('isUser', false))
     );
@@ -46,7 +45,7 @@ export class AuthService {
 
   logout(): Observable<boolean> {
     const obs = this.http.get<boolean>(
-      '/auth/logout',
+      '/api/auth/logout',
     ).pipe(
       catchError(handleError<boolean>('logout', false))
     );
@@ -58,7 +57,7 @@ export class AuthService {
 
   register(username: string, password: string): Observable<boolean> {
     const obs = this.http.post<boolean>(
-      '/auth/register',
+      '/api/auth/register',
       {
         username,
         password
@@ -75,7 +74,7 @@ export class AuthService {
 
   isAdmin(): Observable<boolean> {
     return this.http.get<boolean>(
-      '/auth/admin'
+      '/api/auth/admin'
     ).pipe(
       catchError(handleError<boolean>('isAdmin', false)),
     );
