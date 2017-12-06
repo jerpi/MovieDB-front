@@ -1,5 +1,9 @@
-<p>{{id}}</p>
-<p>
-  movie works!
-  {{movie.name}}
-</p>
+<h1> {{movie.title}} </h1>
+<div class="columns col-oneline">
+  <div class="column col-4">
+    <img [src]="movie.poster_path" class="img-responsive">
+  </div>
+  <div class="column col-8">
+    <p>{{cast.name}}</p>
+  </div>
+</div>
