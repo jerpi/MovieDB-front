@@ -17,9 +17,9 @@ import { CastCardComponent } from './components/landing/cast-showcase/cast-card/
 import {CastService} from './services/cast.service';
 import { HeaderMenuComponent } from './components/header/header-menu/header-menu.component';
 import { MovieComponent } from './components/movie/movie.component';
-import { MovieDetailComponentComponent } from './components/movie/movie-detail-component/movie-detail-component.component';
-import { MovieActorsComponentComponent } from './components/movie/movie-actors-component/movie-actors-component.component';
-import { MovieBaComponentComponent } from './components/movie/movie-ba-component/movie-ba-component.component';
+import { MovieDetailsComponent } from './components/movie/movie-details/movie-details.component';
+import { MovieActorsComponent } from './components/movie/movie-actors/movie-actors.component';
+import { MovieBandeAnnonceComponent } from './components/movie/movie-bande-annonce/movie-bande-annonce.component';
 
 
 @NgModule({
@@ -35,9 +35,9 @@ import { MovieBaComponentComponent } from './components/movie/movie-ba-component
     HeaderMenuComponent,
     MovieComponent,
     CastCardComponent,
-    MovieDetailComponentComponent,
-    MovieActorsComponentComponent,
-    MovieBaComponentComponent
+    MovieDetailsComponent,
+    MovieActorsComponent,
+    MovieBandeAnnonceComponent
   ],
   imports: [
     BrowserModule,
