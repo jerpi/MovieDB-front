@@ -11,9 +11,9 @@ import { Cast } from '../../models/Cast';
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent implements OnInit {
-  id: number;
+
   movie: Movie;
-  cast: Cast;
+  cast: Cast[];
 
   constructor(
     private movieService: MovieService,
@@ -23,28 +23,16 @@ export class MovieComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.id = +params['id']; 
-      this.getMovie(this.id);
-      this.getCast(this.id);
-   });
+      this.getMovie(params['id']);
+    });
   }
 
-  getMovie(id: number): void {
+  getMovie(id: string): void {
     this.movieService
-      .getMovies()
-      .subscribe(movies => {
-        const arr = movies.filter(movie => movie.id === id);
-        this.movie = arr[0];
+      .getMovie(id)
+      .subscribe(movie => {
+        this.movie = movie;
       });
-  }
-
-  getCast(id: number): void {
-    this.castService
-        .getCast()
-        .subscribe(casts => {
-          const arr = casts.filter(cast => cast.id === id);
-          this.cast = arr[0];
-        })
   }
 
 }
