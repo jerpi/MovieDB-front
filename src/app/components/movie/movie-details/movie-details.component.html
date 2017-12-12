@@ -1,0 +1,58 @@
+<div class="columns details" *ngIf="movie">
+    <div class="column col-4 img-poster">
+      <img [src]="movie.poster_path" class="img-responsive">
+    </div>
+    <div class="column col-8">
+      <h1> {{movie.title}} ({{movie.release_year}})</h1>
+      <div class="columns">
+        <div class="column col-6">
+          <div class="text"> 
+              Popularité
+          </div>
+          <div class="bar bar-sm"> 
+            <div class="bar-item tooltip" role="progressbar" data-tooltip="80%" style="width:80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div> 
+          </div>
+        </div>
+        <div class="column col-6">
+          <a href="#bande_annonce" target="_self">
+            <div class="column col-6 icon-fa-play">
+              <i class="fa fa-play" aria-hidden="true"></i> Voir la bande annonce
+            </div>      
+          </a> 
+        </div>
+      </div>
+      <div class="column col-12 synopsis">
+        <h3> Synopsis </h3>
+        <p>{{movie.overview}}</p>
+      </div>
+      <div class="column col-12 informations">
+        <h3> Informations </h3>
+        <div class="columns">
+          <div class="column col-3">
+            <div class="text_info">
+              Durée
+            </div>
+            <p>{{movie.runtime}}</p>
+          </div>
+          <div class="column col-3">
+            <div class="text_info">
+              Date de sortie
+            </div>       
+            <p>{{movie.release_date}}</p>     
+          </div>
+          <div class="column col-3">
+            <div class="text_info">
+              Budget
+            </div>
+            <p>{{movie.budget}}</p>
+          </div>
+          <div class="column col-3">
+            <div class="text_info">
+              Genres 
+            </div>
+            <span class="chip" *ngFor="let genre of movie.genres">{{genre}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,52 @@
+.details {
+    background-color: rgb(56, 53, 53);
+    width: 100%;
+    border: none;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 1px 10px 10px #555;
+    color: white;
+}
+
+.img-poster {
+    padding: 40px;
+}
+
+.text {
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.bar-sm {
+    height: 8px;
+    width: 400px;
+}
+
+.icon-fa-play {
+    font-size: 20px;
+    margin-top: 15px;
+    color: white;
+}
+
+.synopsis {
+    margin-top: 50px;
+    margin-left: -5px;
+}
+
+.informations {
+    margin-top: 50px;
+    margin-left: -5px;
+}
+
+p {
+    width: 90%;
+    text-align: justify;
+    color: white;
+}
+
+.text_info {
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: white;
+}
