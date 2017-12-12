@@ -1,4 +1,79 @@
 h1 {
-    margin-left: 60px;
-    margin-top: 20px;
+    margin-top: 80px;
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    text-align: justify;
+    color: white;
+}
+
+.synopsis {
+    margin-top: 50px;
+}
+
+.informations {
+    margin-top: 50px;
+}
+
+.test {
+    background-color: rgb(56, 53, 53);
+    width: 100%;
+    border: none;
+}
+
+.details {
+    background-color: rgb(56, 53, 53);
+    width: 100%;
+    border: none;
+}
+
+.img-poster {
+    padding: 40px;
+}
+
+div.text {
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.card{
+    width:200px;
+    float: left;
+}
+
+.none {
+    float: none;
+    clear: both;
+}
+
+.bar-sm {
+    height: 8px;
+    width: 400px;
+}
+
+.acteurs {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.bande_annonce {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+
+
+.icon-fa-play {
+    font-size: 20px;
+    margin-top: 15px;
+    color: white;
 }

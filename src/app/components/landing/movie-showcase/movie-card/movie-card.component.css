@@ -6,12 +6,19 @@
 }
 
 .card-image{
-  min-height: 450px;
+  height: 450px;
+  position: relative;
+}
+
+.card-image .img-view{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .card-body{
   overflow: hidden;
   height: 200px;
-  text-overflow: ellipsis;
   hyphens: auto;
+  text-overflow: ellipsis;
 }

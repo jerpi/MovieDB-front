@@ -3,7 +3,7 @@ import {Cast} from './Cast';
 export class Movie {
   _id: string;
   id: number;
-  cast: Array<Cast>;
+  cast: Cast[];
   backdrop_path: string;
   poster_path: string;
   popularity: number;
@@ -31,4 +31,15 @@ export class Movie {
   }[];
   tagline: string;
   status: string;
+  bande_annonce: string;
+  videos: {
+      id: string,
+      key: string,
+      name: string,
+      site: string,
+      size: string,
+      type: string,
+      iso_639_1: string,
+      iso_3166_1: string
+    }[];
 }

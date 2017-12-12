@@ -1,9 +1,78 @@
-<h1> {{movie.title}} </h1>
-<div class="columns col-oneline">
-  <div class="column col-4">
+<div class="columns details" *ngIf="movie">
+  <div class="column col-4 img-poster">
     <img [src]="movie.poster_path" class="img-responsive">
   </div>
   <div class="column col-8">
-    <p>{{cast.name}}</p>
+    <h1> {{movie.title}} ({{movie.release_year}})</h1>
+    <div class="columns">
+      <div class="column col-6">
+        <div class="text"> 
+            Popularité
+        </div>
+        <div class="bar bar-sm"> 
+          <div class="bar-item tooltip" role="progressbar" data-tooltip="80%" style="width:80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div> 
+        </div>
+      </div>
+      <div class="column col-6">
+        <a href="#bande_annonce" target="_self">
+          <div class="column col-6 icon-fa-play">
+            <i class="fa fa-play" aria-hidden="true"></i> Voir la bande annonce
+          </div>      
+        </a> 
+      </div>
+    </div>
+    <div class="column col-12 synopsis">
+      <h3> Synopsis </h3>
+      <p>{{movie.overview}}</p>
+    </div>
+    <div class="column col-12 informations">
+      <h3> Informations </h3>
+      <div class="columns">
+        <div class="column col-3">
+          <div class="text">
+            Durée
+          </div>
+          <p>{{movie.runtime}}</p>
+        </div>
+        <div class="column col-3">
+          <div class="text">
+            Date de sortie
+          </div>       
+          <p>{{movie.release_date}}</p>     
+        </div>
+        <div class="column col-3">
+          <div class="text">
+            Budget
+          </div>
+          <p>{{movie.budget}}</p>
+        </div>
+        <div class="column col-3">
+          <div class="text">
+            Genres {{movie.genres}}
+          </div>
+          <p *ngFor="let genre of movie.genres">{{genre}}</p>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
+<div class="acteurs">
+  <h2> Acteurs </h2>
+  <div class="card">
+    <div class="card-image">
+      <img src="{{cast.img}}" class="img-responsive">
+    </div>
+    <div class="card-header">
+      <div class="card-title h5">{{cast.name}}</div>
+      <div class="card-subtitle text-gray">Nom dans le film</div>
+    </div>
+  </div>
+</div>
+
+<div class="none"></div>
+
+<div class="bande_annonce">
+  <h2 id="bande_annonce"> Bande annonce </h2>
+  <iframe class="e2e-iframe-trusted-src" width="560" height="315" [src]="videoUrl" allowfullscreen=""></iframe>
 </div>
