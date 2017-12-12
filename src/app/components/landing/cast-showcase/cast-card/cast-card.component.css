@@ -1,6 +1,17 @@
 .card{
-  width:300px;
+  width: 300px;
   margin-left: 3%;
   margin-top: 3%;
   float: left;
+}
+
+.card-image{
+  min-height: 450px;
+}
+
+.card-body{
+  overflow: hidden;
+  height: 200px;
+  hyphens: auto;
+  text-overflow: ellipsis;
 }

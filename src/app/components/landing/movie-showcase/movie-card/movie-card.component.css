@@ -4,3 +4,14 @@
   margin-top: 3%;
   float: left;
 }
+
+.card-image{
+  min-height: 450px;
+}
+
+.card-body{
+  overflow: hidden;
+  height: 200px;
+  text-overflow: ellipsis;
+  hyphens: auto;
+}
