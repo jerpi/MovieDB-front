@@ -31,4 +31,5 @@ export class Movie {
   }[];
   tagline: string;
   status: string;
+  bande_annonce: string;
 }
