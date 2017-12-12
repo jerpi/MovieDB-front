@@ -31,7 +31,7 @@ export class MovieComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.id = +params['id']; 
+      this.id = +params['id'];
       this.getMovie(this.id);
       this.getCast(this.id);
       
@@ -54,7 +54,7 @@ export class MovieComponent implements OnInit {
         .subscribe(casts => {
           const arr = casts.filter(cast => cast.id === id);
           this.cast = arr[0];
-        })
+        });
   }
 
   updateVideoUrl(key: string) {

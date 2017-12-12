@@ -4,3 +4,21 @@
   margin-top: 3%;
   float: left;
 }
+
+.card-image{
+  height: 450px;
+  position: relative;
+}
+
+.card-image .img-view{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.card-body{
+  overflow: hidden;
+  height: 200px;
+  hyphens: auto;
+  text-overflow: ellipsis;
+}
