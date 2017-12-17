@@ -15,7 +15,6 @@ export class CastService {
     private http: HttpClient
   ) { }
 
-  /** GET movies from the server */
   getCast (): Observable<Cast[]> {
     return this.http.get<Cast[]>(this.castUrl);
   }
