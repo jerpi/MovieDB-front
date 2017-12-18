@@ -22,6 +22,7 @@ import { MovieActorsComponent } from './components/movie/movie-actors/movie-acto
 import { MovieBandeAnnonceComponent } from './components/movie/movie-bande-annonce/movie-bande-annonce.component';
 import { PostAreaComponent } from './components/post-area/post-area.component';
 import { PostComponent } from './components/post-area/post/post.component';
+import { SearchComponent } from './components/header/search/search.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { PostComponent } from './components/post-area/post/post.component';
     MovieActorsComponent,
     MovieBandeAnnonceComponent,
     PostAreaComponent,
-    PostComponent
+    PostComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
