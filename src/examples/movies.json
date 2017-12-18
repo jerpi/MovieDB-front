@@ -9,7 +9,7 @@
     "runtime": "1 h 55",
     "budget": "14 million $",
     "bande_annonce": "YmeEz6cQrwM",
-    "genres": "Aventure",
+    "genres": ["Aventure, Test, Test"],
     "popularity": "75"
   },
   {
@@ -22,7 +22,7 @@
     "runtime": "1 h 53",
     "budget": "34 million $",
     "bande_annonce": "Cz_-ak1TKpo",
-    "genres": "Aventure",
+    "genres": ["Aventure, Test, Test"],
     "popularity": 90
   }
 ]

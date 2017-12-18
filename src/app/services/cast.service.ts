@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Cast } from '../models/Cast';
+import { Cast } from '../models/cast';
 
 @Injectable()
 export class CastService {
@@ -15,7 +15,6 @@ export class CastService {
     private http: HttpClient
   ) { }
 
-  /** GET movies from the server */
   getCast (): Observable<Cast[]> {
     return this.http.get<Cast[]>(this.castUrl);
   }
