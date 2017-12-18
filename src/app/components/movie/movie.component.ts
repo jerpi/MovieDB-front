@@ -3,7 +3,7 @@ import { MovieService } from '../../services/movie.service';
 import { CastService } from '../../services/cast.service';
 import { ActivatedRoute } from "@angular/router";
 import { Movie } from '../../models/movie';
-import { Cast } from '../../models/Cast';
+import { Cast } from '../../models/cast';
 
 @Component({
   selector: 'app-movie',

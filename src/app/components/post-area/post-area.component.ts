@@ -1,8 +1,8 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {PostsService} from "../../services/posts.service";
-import {Post} from "../../models/Post";
-import {Cast} from "../../models/Cast";
-import {Movie} from "../../models/Movie";
+import {Post} from "../../models/post";
+import {Cast} from "../../models/cast";
+import {Movie} from "../../models/movie";
 
 @Component({
   selector: 'app-post-area',
@@ -25,7 +25,6 @@ export class PostAreaComponent implements OnChanges {
   ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.loading = true;
     if (changes['movie']) {
       this.getPosts(this.movie._id);
     } else if (changes['cast']) {
@@ -33,8 +32,9 @@ export class PostAreaComponent implements OnChanges {
     }
   }
 
-  getPosts(id: string) {
-    this.postsService.getPosts(id)
+  getPosts(contentId: string): void {
+    this.loading = true;
+    this.postsService.getPosts(contentId)
       .subscribe(
         posts => {
           this.posts = posts;

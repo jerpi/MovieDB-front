@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Cast} from '../../../models/Cast';
+import {Cast} from '../../../models/cast';
 import {CastService} from '../../../services/cast.service';
 
 @Component({
