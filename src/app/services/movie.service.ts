@@ -22,7 +22,7 @@ export class MovieService {
   getMovie(id: string): Observable<Movie> {
     return this.http.get<Movie>('/api/movies/' + id)
       .pipe(
-        catchError(handleError<Movie>('getMovie')),
+        catchError(handleError<Movie>('getMovie', null)),
       );
   }
 }

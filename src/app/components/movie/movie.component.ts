@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { CastService } from '../../services/cast.service';
-import { ActivatedRoute } from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { Movie } from '../../models/movie';
 import { Cast } from '../../models/cast';
 
@@ -18,13 +18,14 @@ export class MovieComponent implements OnInit {
   constructor(
     private movieService: MovieService,
     private castService: CastService,
+    private router: Router,
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.getMovie(params['id']);
-   });
+    });
   }
 
   getMovie(id: string): void {
@@ -32,6 +33,9 @@ export class MovieComponent implements OnInit {
       .getMovie(id)
       .subscribe(movie => {
         this.movie = movie;
+        if (this.movie == null) {
+          // TODO
+        }
       });
   }
 }
