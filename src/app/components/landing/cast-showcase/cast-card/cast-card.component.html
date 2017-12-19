@@ -1,16 +1,22 @@
 <div class="card">
   <div class="card-image">
     <div class="img-blur"></div>
-    <img src="{{cast.img}}" class="img-responsive img-view">
+      <a [routerLink]="['/cast', cast.id]">
+        <img src="{{cast.img}}" class="img-responsive img-view">
+      </a>
   </div>
   <div class="card-header">
-    <div class="card-title h5">{{cast.name}}</div>
+    <div class="card-title h5">
+        <a [routerLink]="['/cast', cast.id]">
+          {{cast.name}}
+        </a>
+    </div>
     <div class="card-subtitle text-gray">{{cast.birthdate}}</div>
   </div>
   <div class="card-body">
     {{cast.biography}}
   </div>
   <div class="card-footer">
-    <button class="btn btn-primary">Show details</button>
+    <a class="btn btn-primary" [routerLink]="['/cast', cast.id]">Show details</a>
   </div>
 </div>
