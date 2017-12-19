@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from '../../services/movie.service';
-import { CastService } from '../../services/cast.service';
-import { ActivatedRoute } from "@angular/router";
-import { Movie } from '../../models/movie';
 import { Cast } from '../../models/Cast';
+import { CastService } from '../../services/cast.service';
+import { ActivatedRoute } from '@angular/router';
+import { Movie } from '../../models/movie';
+import { MovieService } from '../../services/movie.service';
 
 @Component({
-  selector: 'app-movie',
-  templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.css']
+  selector: 'app-cast',
+  templateUrl: './cast.component.html',
+  styleUrls: ['./cast.component.css']
 })
-export class MovieComponent implements OnInit {
-  
-  movie: Movie;
-  cast: Cast;
+export class CastComponent implements OnInit {
 
-  constructor(
+  cast: Cast;
+  movie: Movie;
+
+  constructor(   
     private movieService: MovieService,
     private castService: CastService,
     private route: ActivatedRoute,
@@ -47,7 +47,5 @@ export class MovieComponent implements OnInit {
           this.cast = arr[0];
         });
   }
-
-  
 
 }

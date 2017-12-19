@@ -20,6 +20,9 @@ import { MovieComponent } from './components/movie/movie.component';
 import { MovieDetailsComponent } from './components/movie/movie-details/movie-details.component';
 import { MovieActorsComponent } from './components/movie/movie-actors/movie-actors.component';
 import { MovieBandeAnnonceComponent } from './components/movie/movie-bande-annonce/movie-bande-annonce.component';
+import { CastComponent } from './components/cast/cast.component';
+import { CastMoviesComponent } from './components/cast/cast-movies/cast-movies.component';
+import { CastDetailsComponent } from './components/cast/cast-details/cast-details.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { MovieBandeAnnonceComponent } from './components/movie/movie-bande-annon
     CastCardComponent,
     MovieDetailsComponent,
     MovieActorsComponent,
-    MovieBandeAnnonceComponent
+    MovieBandeAnnonceComponent,
+    CastComponent,
+    CastMoviesComponent,
+    CastDetailsComponent
   ],
   imports: [
     BrowserModule,
