@@ -11,9 +11,12 @@ export class MovieDetailsComponent implements OnInit {
   @Input()
   movie: Movie;
 
+  date = new Date(this.movie.release_date);
+
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

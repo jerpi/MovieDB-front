@@ -34,7 +34,7 @@ export class MovieComponent implements OnInit {
       .subscribe(movie => {
         this.movie = movie;
         if (this.movie == null) {
-          // TODO
+          this.router.navigate(['']);
         }
       });
   }

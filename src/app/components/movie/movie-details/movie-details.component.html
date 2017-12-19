@@ -32,13 +32,13 @@
             <div class="text_info">
               Durée
             </div>
-            <p>{{movie.runtime}}</p>
+            <p>{{movie.runtime | time}}</p>
           </div>
           <div class="column col-3">
             <div class="text_info">
               Date de sortie
             </div>       
-            <p>{{movie.release_date}}</p>     
+            <p>{{date | date: 'dd'}}/{{date | date:'MM'}}/{{date | date: 'yyyy'}}}}</p>     
           </div>
           <div class="column col-3">
             <div class="text_info">
@@ -51,7 +51,7 @@
               Genres 
             </div>
             <span class="chip" *ngFor="let genre of movie.genres">
-              {{genre}}
+              {{genre.name}}
             </span>
           </div>
         </div>

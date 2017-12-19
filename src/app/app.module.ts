@@ -26,6 +26,7 @@ import {CastDetailsComponent} from "./components/cast/cast-details/cast-details.
 import {PostAreaComponent} from "./components/post-area/post-area.component";
 import {PostComponent} from "./components/post-area/post/post.component";
 import {SearchComponent} from "./components/header/search/search.component";
+import { TimePipe } from './pipes/time.pipe';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import {SearchComponent} from "./components/header/search/search.component";
     PostAreaComponent,
     PostComponent,
     SearchComponent,
+    TimePipe,
   ],
   imports: [
     BrowserModule,
