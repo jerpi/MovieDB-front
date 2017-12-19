@@ -1,5 +1,5 @@
 <div class="input-group input-inline">
   <input class="form-input" placeholder="Search" [formControl]="searchControl">
-  <button class="btn btn-primary input-group-btn">Search</button>
+  <button class="btn btn-primary input-group-btn" [ngClass]="{ 'loading': loading }">Search</button>
   <app-movies-list [movies]="movies"></app-movies-list>
 </div>
