@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cast } from '../../models/Cast';
+import { Cast } from '../../models/cast';
 import { CastService } from '../../services/cast.service';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from '../../models/movie';
@@ -15,7 +15,7 @@ export class CastComponent implements OnInit {
   cast: Cast;
   movie: Movie;
 
-  constructor(   
+  constructor(
     private movieService: MovieService,
     private castService: CastService,
     private route: ActivatedRoute,
@@ -26,7 +26,7 @@ export class CastComponent implements OnInit {
       const id = +params['id'];
       this.getMovie(id);
       this.getCast(id);
-      
+
    });
   }
 
