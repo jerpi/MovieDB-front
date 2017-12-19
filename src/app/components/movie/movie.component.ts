@@ -3,7 +3,7 @@ import { MovieService } from '../../services/movie.service';
 import { CastService } from '../../services/cast.service';
 import { ActivatedRoute } from "@angular/router";
 import { Movie } from '../../models/movie';
-import { Cast } from '../../models/Cast';
+import { Cast } from '../../models/cast';
 
 @Component({
   selector: 'app-movie',
@@ -11,7 +11,7 @@ import { Cast } from '../../models/Cast';
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent implements OnInit {
-  
+
   movie: Movie;
   cast: Cast;
 
@@ -23,31 +23,15 @@ export class MovieComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      const id = +params['id'];
-      this.getMovie(id);
-      this.getCast(id);
-      
+      this.getMovie(params['id']);
    });
   }
 
-  getMovie(id: number): void {
+  getMovie(id: string): void {
     this.movieService
-      .getMovies()
-      .subscribe(movies => {
-        const arr = movies.filter(movie => movie.id === id);
-        this.movie = arr[0];
+      .getMovie(id)
+      .subscribe(movie => {
+        this.movie = movie;
       });
   }
-
-  getCast(id: number): void {
-    this.castService
-        .getCast()
-        .subscribe(casts => {
-          const arr = casts.filter(cast => cast.id === id);
-          this.cast = arr[0];
-        });
-  }
-
-  
-
 }

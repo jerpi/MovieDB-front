@@ -20,9 +20,14 @@ import { MovieComponent } from './components/movie/movie.component';
 import { MovieDetailsComponent } from './components/movie/movie-details/movie-details.component';
 import { MovieActorsComponent } from './components/movie/movie-actors/movie-actors.component';
 import { MovieBandeAnnonceComponent } from './components/movie/movie-bande-annonce/movie-bande-annonce.component';
+<<<<<<< HEAD
 import { CastComponent } from './components/cast/cast.component';
 import { CastMoviesComponent } from './components/cast/cast-movies/cast-movies.component';
 import { CastDetailsComponent } from './components/cast/cast-details/cast-details.component';
+=======
+import { PostAreaComponent } from './components/post-area/post-area.component';
+import { PostComponent } from './components/post-area/post/post.component';
+>>>>>>> 2c0a034e598a448909b400faaff09cf3de807903
 
 
 @NgModule({
@@ -41,9 +46,14 @@ import { CastDetailsComponent } from './components/cast/cast-details/cast-detail
     MovieDetailsComponent,
     MovieActorsComponent,
     MovieBandeAnnonceComponent,
+<<<<<<< HEAD
     CastComponent,
     CastMoviesComponent,
     CastDetailsComponent
+=======
+    PostAreaComponent,
+    PostComponent
+>>>>>>> 2c0a034e598a448909b400faaff09cf3de807903
   ],
   imports: [
     BrowserModule,
