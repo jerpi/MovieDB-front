@@ -13,6 +13,7 @@ export class SearchComponent implements OnInit {
 
   searchControl: FormControl = new FormControl();
   movies: Movie[];
+  loading: boolean;
 
   constructor(
     private movieService: MovieService,
@@ -25,9 +26,13 @@ export class SearchComponent implements OnInit {
         debounceTime(500),
         distinctUntilChanged(),
       ).subscribe((item) => {
+        this.loading = true;
         this.movieService
           .getMovies({ title: item })
-          .subscribe(movies => this.movies = movies);
+          .subscribe(movies => {
+            this.movies = movies;
+            this.loading = false;
+          });
     });
   }
 
