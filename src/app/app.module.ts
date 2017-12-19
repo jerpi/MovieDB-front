@@ -29,6 +29,7 @@ import {SearchComponent} from "./components/header/search/search.component";
 import { TimePipe } from './pipes/time.pipe';
 import { MoviesListComponent } from './components/header/search/movies-list/movies-list.component';
 import { MovieCommentsComponent } from './components/movie/movie-comments/movie-comments.component';
+import { MovieElementComponent } from './components/header/search/movies-list/movie-element/movie-element.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { MovieCommentsComponent } from './components/movie/movie-comments/movie-
     TimePipe,
     MoviesListComponent,
     MovieCommentsComponent,
+    MovieElementComponent,
   ],
   imports: [
     BrowserModule,
