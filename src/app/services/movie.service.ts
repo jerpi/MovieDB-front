@@ -12,7 +12,7 @@ export class MovieService {
     private http: HttpClient
   ) { }
 
-  getMovies(): Observable<Movie[]> {
+  getMovies(query?: any): Observable<Movie[]> { // TODO
     return this.http.get<Movie[]>('/api/movies/')
       .pipe(
         catchError(handleError<Movie[]>('getMovies', [])),

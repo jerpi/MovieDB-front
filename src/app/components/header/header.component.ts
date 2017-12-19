@@ -9,6 +9,9 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
 
+  movie: boolean;
+  cast: boolean;
+
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -23,6 +26,6 @@ export class HeaderComponent implements OnInit {
   }
 
   get showMenuButton() {
-    return this.router.url != '/join' && this.router.url != '/login' && this.authService.isLoggedIn; 
+    return this.router.url != '/join' && this.router.url != '/login' && this.authService.isLoggedIn;
   }
 }
