@@ -7,10 +7,10 @@
       <div class="columns">
         <div class="column col-6">
           <div class="text">
-              Popularité
+              Popularité ({{movie.vote_count}} votants)
           </div>
-          <div class="bar bar-sm">
-            <div class="bar-item tooltip" role="progressbar" data-tooltip="80%" style="width:80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="bar bar-sm tooltip" [attr.data-tooltip]="percentage"  >
+            <div class="bar-item" role="progressbar" [ngStyle]="{'width' : percentage}" style="width:80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
         <div class="column col-6">
@@ -44,7 +44,27 @@
             <div class="text_info">
               Budget
             </div>
-            <p>{{movie.budget}}</p>
+            <p >{{movie.budget}}$</p>
+          </div>
+          <div class="column col-3">
+            <div class="text_info">
+              Revenus
+            </div>
+            <p >{{movie.revenue}}$</p>
+          </div>
+          <div class="column col-6">
+            <div class="text_info">
+              Productions
+            </div>
+            <span class="chip" *ngFor="let prod of movie.production_companies">
+              {{prod.name}}
+            </span>
+          </div>
+          <div class="column col-3">
+            <div class="text_info">
+              Language
+            </div>
+            <span class="chip" *ngFor="let language of movie.spoken_languages">{{language.name}}</span>
           </div>
           <div class="column col-3">
             <div class="text_info">

@@ -11,11 +11,15 @@ export class MovieDetailsComponent {
   @Input()
   movie: Movie;
 
-  get poster() {
+  get poster(): string {
     return 'https://image.tmdb.org/t/p/w300/' + this.movie.poster_path;
   }
 
-  get date() {
+  get date(): Date {
     return new Date(this.movie.release_date);
+  }
+
+  get percentage(): string {
+    return Math.floor(this.movie.vote_average * 10) + '%';
   }
 }
