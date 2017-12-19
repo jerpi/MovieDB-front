@@ -26,7 +26,11 @@ import {CastDetailsComponent} from "./components/cast/cast-details/cast-details.
 import {PostAreaComponent} from "./components/post-area/post-area.component";
 import {PostComponent} from "./components/post-area/post/post.component";
 import {SearchComponent} from "./components/header/search/search.component";
+<<<<<<< HEAD
 import { TimePipe } from './pipes/time.pipe';
+=======
+import { MoviesListComponent } from './components/header/search/movies-list/movies-list.component';
+>>>>>>> e3e890b2e86aeea826fe806e1f5cb724218d5d5b
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { TimePipe } from './pipes/time.pipe';
     PostAreaComponent,
     PostComponent,
     SearchComponent,
+<<<<<<< HEAD
     TimePipe,
+=======
+    MoviesListComponent,
+>>>>>>> e3e890b2e86aeea826fe806e1f5cb724218d5d5b
   ],
   imports: [
     BrowserModule,
