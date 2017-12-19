@@ -12,14 +12,7 @@ import {Movie} from "../../../models/movie";
 export class SearchComponent implements OnInit {
 
   searchControl: FormControl = new FormControl();
-
   movies: Movie[];
-
-  @Input()
-  cast: boolean;
-
-  @Input()
-  movie: boolean;
 
   constructor(
     private movieService: MovieService,

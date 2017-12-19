@@ -9,9 +9,6 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
 
-  movie: boolean;
-  cast: boolean;
-
   constructor(
     private authService: AuthService,
     private router: Router,
