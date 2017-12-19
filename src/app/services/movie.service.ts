@@ -13,7 +13,13 @@ export class MovieService {
   ) { }
 
   getMovies(query?: any): Observable<Movie[]> { // TODO
-    return this.http.get<Movie[]>('/api/movies/')
+    let url = '/api/movies/';
+    if (query) {
+      url += 'q';
+    } else {
+      query = {};
+    }
+    return this.http.get<Movie[]>(url, { params: query })
       .pipe(
         catchError(handleError<Movie[]>('getMovies', [])),
       );

@@ -26,6 +26,7 @@ import {CastDetailsComponent} from "./components/cast/cast-details/cast-details.
 import {PostAreaComponent} from "./components/post-area/post-area.component";
 import {PostComponent} from "./components/post-area/post/post.component";
 import {SearchComponent} from "./components/header/search/search.component";
+import { TimePipe } from './pipes/time.pipe';
 import { MoviesListComponent } from './components/header/search/movies-list/movies-list.component';
 import { MovieCommentsComponent } from './components/movie/movie-comments/movie-comments.component';
 
@@ -51,6 +52,7 @@ import { MovieCommentsComponent } from './components/movie/movie-comments/movie-
     PostAreaComponent,
     PostComponent,
     SearchComponent,
+    TimePipe,
     MoviesListComponent,
     MovieCommentsComponent,
   ],
