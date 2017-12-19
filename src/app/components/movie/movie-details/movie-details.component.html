@@ -1,24 +1,24 @@
 <div class="columns details" *ngIf="movie">
     <div class="column col-4 img-poster">
-      <img [src]="movie.poster_path" class="img-responsive">
+      <img [src]="poster" class="img-responsive">
     </div>
     <div class="column col-8">
-      <h1> {{movie.title}} ({{movie.release_year}})</h1>
+      <h1> {{movie.title}} ({{date | date: 'yyyy'}})</h1>
       <div class="columns">
         <div class="column col-6">
-          <div class="text"> 
+          <div class="text">
               Popularité
           </div>
-          <div class="bar bar-sm"> 
-            <div class="bar-item tooltip" role="progressbar" data-tooltip="80%" style="width:80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div> 
+          <div class="bar bar-sm">
+            <div class="bar-item tooltip" role="progressbar" data-tooltip="80%" style="width:80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
         <div class="column col-6">
           <a href="#bande_annonce" target="_self">
             <div class="column col-6 icon-fa-play">
               <i class="fa fa-play" aria-hidden="true"></i> Voir la bande annonce
-            </div>      
-          </a> 
+            </div>
+          </a>
         </div>
       </div>
       <div class="column col-12 synopsis">
@@ -37,8 +37,8 @@
           <div class="column col-3">
             <div class="text_info">
               Date de sortie
-            </div>       
-            <p>{{date | date: 'dd'}}/{{date | date:'MM'}}/{{date | date: 'yyyy'}}}}</p>     
+            </div>
+            <p>{{date | date: 'dd/MM/yyyy'}}</p>
           </div>
           <div class="column col-3">
             <div class="text_info">
@@ -48,7 +48,7 @@
           </div>
           <div class="column col-3">
             <div class="text_info">
-              Genres 
+              Genres
             </div>
             <span class="chip" *ngFor="let genre of movie.genres">
               {{genre.name}}

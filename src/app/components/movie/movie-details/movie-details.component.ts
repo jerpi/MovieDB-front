@@ -6,17 +6,16 @@ import { Movie } from '../../../models/movie';
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css']
 })
-export class MovieDetailsComponent implements OnInit {
+export class MovieDetailsComponent {
 
   @Input()
   movie: Movie;
 
-  date = new Date(this.movie.release_date);
-
-  constructor() { }
-
-  ngOnInit() {
-    
+  get poster() {
+    return 'https://image.tmdb.org/t/p/w300/' + this.movie.poster_path;
   }
 
+  get date() {
+    return new Date(this.movie.release_date);
+  }
 }

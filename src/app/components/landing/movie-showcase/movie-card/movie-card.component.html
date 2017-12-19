@@ -2,7 +2,7 @@
   <div class="card-image">
     <div class="img-blur"></div>
     <a [routerLink]="['/movie', movie._id]">
-      <img [src]="movie.poster_path" class="img-responsive img-view">
+      <img [src]="poster" class="img-responsive img-view">
     </a>
   </div>
   <div class="card-header">
@@ -11,7 +11,7 @@
         {{movie.title}}
       </a>
     </div>
-    <div class="card-subtitle text-gray">{{movie.release_date}} ({{movie.runtime}})</div>
+    <div class="card-subtitle text-gray">{{movie.release_date | date: 'dd/MM/yyyy'}} ({{movie.runtime | time}})</div>
   </div>
   <div class="card-body">
     {{movie.overview}}

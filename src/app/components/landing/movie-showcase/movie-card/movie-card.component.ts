@@ -6,14 +6,13 @@ import {Movie} from "../../../../models/movie";
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.css']
 })
-export class MovieCardComponent implements OnInit {
+export class MovieCardComponent {
 
   @Input()
   movie: Movie;
 
-  constructor() { }
-
-  ngOnInit() {
+  get poster() {
+    return 'https://image.tmdb.org/t/p/w300/' + this.movie.poster_path;
   }
 
 }
