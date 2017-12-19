@@ -3,6 +3,7 @@ import {MovieService} from "../../../services/movie.service";
 import {FormControl} from "@angular/forms";
 import {distinctUntilChanged, debounceTime} from "rxjs/operators";
 import {Movie} from "../../../models/movie";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-search',
@@ -17,6 +18,7 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private movieService: MovieService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -34,6 +36,11 @@ export class SearchComponent implements OnInit {
             this.loading = false;
           });
     });
+    this.router.events.subscribe(
+      res => {
+        this.movies = [];
+      }
+    );
   }
 
 }

@@ -1,4 +1,4 @@
 <div class="header">Movies</div>
-<div class="flex-container">
-  <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
+<div class="flex-container" *ngIf="movies">
+  <app-movie-card *ngFor="let movie of movies.reverse()" [movie]="movie"></app-movie-card>
 </div>

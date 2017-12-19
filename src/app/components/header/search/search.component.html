@@ -1,5 +1,11 @@
-<div class="input-group input-inline">
+<div class=" dropdown active input-group input-inline">
   <input class="form-input" placeholder="Search" [formControl]="searchControl">
-  <button class="btn btn-primary input-group-btn" [ngClass]="{ 'loading': loading }">Search</button>
-  <app-movies-list [movies]="movies"></app-movies-list>
+
+  <button class="btn btn-primary input-group-btn dropdown-toggle" [ngClass]="{ 'loading': loading }">Search</button>
+
+  <ul class="menu" *ngIf="movies && movies.length > 0" >
+    <li class="menu-item" *ngFor="let movie of movies.slice(0, 2)">
+      <app-movie-element [movie]="movie"></app-movie-element>
+    </li>
+  </ul>
 </div>

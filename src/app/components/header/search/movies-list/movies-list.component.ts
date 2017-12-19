@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Movie} from '../../../../models/movie';
 
 @Component({
@@ -6,14 +6,7 @@ import {Movie} from '../../../../models/movie';
   templateUrl: './movies-list.component.html',
   styleUrls: ['./movies-list.component.css']
 })
-export class MoviesListComponent implements OnInit {
-
+export class MoviesListComponent {
   @Input()
   movies: Movie[];
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

@@ -1,5 +1,4 @@
-<div class="element">
+<div [routerLink]="['/movie', movie._id]">
   <img [src]="poster" alt="Cover" />
   <p>{{movie.title}} ({{movie.release_date | date: 'yyyy'}})</p>
 </div>
-
