@@ -27,6 +27,7 @@ import {PostAreaComponent} from "./components/post-area/post-area.component";
 import {PostComponent} from "./components/post-area/post/post.component";
 import {SearchComponent} from "./components/header/search/search.component";
 import { MoviesListComponent } from './components/header/search/movies-list/movies-list.component';
+import { MovieCommentsComponent } from './components/movie/movie-comments/movie-comments.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { MoviesListComponent } from './components/header/search/movies-list/movi
     PostComponent,
     SearchComponent,
     MoviesListComponent,
+    MovieCommentsComponent,
   ],
   imports: [
     BrowserModule,

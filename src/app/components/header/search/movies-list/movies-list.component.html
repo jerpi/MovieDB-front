@@ -1,3 +1,6 @@
-<p>
-  movies-list works!
-</p>
+<ul>
+  <div *ngFor="let movie of movies">
+    <img [src]="movie.poster_path" alt="Cover" />
+    <li>{{movie.title}}</li>
+  </div>
+</ul>
